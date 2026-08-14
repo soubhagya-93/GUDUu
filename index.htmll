@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise For You ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Envelope Styling */
+        .envelope-wrapper {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 20;
+        }
+        .envelope-wrapper:hover {
+            transform: scale(1.05);
+        }
+        .envelope {
+            position: relative;
+            width: 280px;
+            height: 180px;
+            background: #ff477e;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: -140px;
+            left: 0;
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+            border-bottom: 140px solid #ff477e;
+            transform-origin: bottom;
+            transition: transform 0.4s ease 0.2s;
+        }
+        .envelope.open::before {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+        .heart-seal {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            z-index: 5;
+            transition: transform 0.3s ease;
+        }
+        .envelope-hint {
+            text-align: center;
+            margin-top: 20px;
+            color: #ff477e;
+            font-weight: bold;
+            font-size: 1.1rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Main Content Container (Hidden at start) */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 75, 110, 0.2);
+            text-align: center;
+            max-width: 550px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+            border: 2px solid #ff85a1;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        h1 { color: #ff477e; margin-bottom: 1rem; font-size: 2rem; }
+        p { color: #6c757d; font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+        /* Timer Style */
+        .timer-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ff7096;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        #countdown {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff477e;
+            margin-bottom: 1.5rem;
+            background: #fff0f3;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Memory Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1) rotate(2deg);
+            z-index: 2;
+        }
+
+        /* Button Interaction Layout */
+        .btn-group { display: flex; justify-content: center; gap: 20px; height: 50px; position: relative; }
+        button { padding: 10px 30px; font-size: 1.1rem; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.2s; }
+        #yesBtn { background-color: #ff477e; color: white; box-shadow: 0 4px 15px rgba(255, 71, 126, 0.4); }
+        #yesBtn:hover { transform: scale(1.1); background-color: #ff0a54; }
+        #noBtn { background-color: #6c757d; color: white; position: absolute; transition: all 0.2s ease; }
+
+        /* Floating Hearts Background */
+        .heart { position: absolute; color: #ff85a1; font-size: 1.5rem; animation: float 4s linear infinite; opacity: 0.6; bottom: -50px; z-index: 1; }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INTERACTIVE ENVELOPE (SCENE 1) -->
+    <div id="envelopeSection" style="text-align: center;">
+        <div class="envelope-wrapper" onclick="openLetter()">
+            <div class="envelope" id="envelope">
+                <div class="heart-seal">❤️</div>
+            </div>
+        </div>
+        <div class="envelope-hint">You received a letter! Click to open 💌</div>
+    </div>
+
+    <!-- MAIN HOMEPAGE CONTENT (SCENE 2) -->
+    <div class="container" id="mainContent">
+        <h1>Hey Beautiful! 🌸</h1>
+        <p>Every single day with you is a blessing. Thank you for being mine.</p>
+        
+        <!-- Photo Gallery Grid -->
+        <div class="gallery">
+            <img src="images/photo1.jpg" alt="Our Memory 1">
+            <img src="images/photo2.jpg" alt="Our Memory 2">
+            <img src="images/photo3.jpg" alt="Our Memory 3">
+        </div>
+
+        <div class="timer-title">Time Spent Loving You</div>
+        <div id="countdown">Loading timer...</div>
+
+        <p style="font-weight: bold; color: #ff477e;">Will you go on a date with me this weekend?</p>
+        
+        <div class="btn-group">
+            <button id="yesBtn" onclick="celebrate()">Yes!</button>
+            <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. SET YOUR ANNIVERSARY DATE HERE (Year, Month Index 0-11, Day)
+        // Note: January is 0, February is 1, August is 7, etc.
+        const anniversaryDate = new Date(2025, 7, 14, 0, 0); 
+
+        // ENVELOPE OPENING TRIGGER
+        function openLetter() {
+            const env = document.getElementById('envelope');
+            env.classList.add('open');
+            
+            setTimeout(() => {
+                document.getElementById('envelopeSection').style.display = 'none';
+                const main = document.getElementById('mainContent');
+                main.style.display = 'block';
+                setTimeout(() => { main.style.opacity = '1'; }, 50);
+            }, 800);
+        }
+
+        // TICKING ANNIVERSARY COUNTDOWN TIMER
+        function updateTimer() {
+            const now = new Date();
+            const difference = now - anniversaryDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = 
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // MAKE THE NO BUTTON RUN AWAY
+        const noBtn = document.getElementById('noBtn');
+        noBtn.style.left = "55%";
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        // DATE ACCEPTANCE CELEBRATION
+        function celebrate() {
+            document.querySelector('.container').innerHTML = `
+                <h1>Yay! 🎉❤️</h1>
+                <p>I knew you'd say yes! I'll pick you up at 7. Dress cute! 😘</p>
+                <div style="font-size: 4rem; margin-top: 20px;">🥰💖👩‍❤️‍👨</div>
+            `;
+            for(let i=0; i<40; i++) { setTimeout(createHeart, i * 80); }
+        }
+
+        // FLOATING BACKGROUND HEARTS SYSTEM
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            heart.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 450);
+    </script>
+</body>
+</html>
