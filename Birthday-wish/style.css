@@ -1,0 +1,454 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+
+/* LOGIN */
+
+#loginScreen {
+    height: 100vh;
+    background: linear-gradient(135deg, #16000b, #570b29, #d6336c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.login-box {
+    width: 420px;
+    padding: 45px 30px;
+    text-align: center;
+    border-radius: 25px;
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 50px rgba(255,100,150,.5);
+}
+
+.user-icon {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.login-box h1 {
+    margin-bottom: 15px;
+}
+
+.login-box p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    outline: none;
+    text-align: center;
+}
+
+.login-box button,
+.secret button,
+.final-content button {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-box small {
+    display: block;
+    margin-top: 20px;
+    opacity: .7;
+}
+
+
+/* DESKTOP */
+
+#desktop {
+    display: none;
+    height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%, #ff477e55, transparent 30%),
+        radial-gradient(circle at 80% 70%, #ff149355, transparent 30%),
+        linear-gradient(135deg, #18000b, #4d0925, #970d43);
+    position: relative;
+    color: white;
+}
+
+.desktop-title {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* ICONS */
+
+.icon {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon div {
+    font-size: 45px;
+}
+
+.icon span {
+    font-size: 13px;
+}
+
+.icon2 {
+    top: 210px;
+}
+
+.icon3 {
+    top: 330px;
+}
+
+.icon4 {
+    top: 450px;
+}
+
+
+/* WINDOWS */
+
+.window {
+    position: absolute;
+    display: none;
+    width: 600px;
+    max-width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(35, 5, 20, .95);
+    border: 1px solid #ff9ab8;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 50px #ff4f8166;
+    z-index: 10;
+}
+
+.window-header {
+    height: 48px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #8e123e, #d6336c);
+    font-weight: bold;
+}
+
+.window-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.window-content {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+
+/* LOVE LETTER */
+
+.love-letter {
+    text-align: center;
+}
+
+.love-letter h1 {
+    color: #ffb3c9;
+    margin-bottom: 25px;
+}
+
+.love-letter p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.code-love {
+    padding: 20px;
+    background: #10030a;
+    color: #ff8fb1;
+    border-radius: 12px;
+    text-align: left;
+    margin: 25px 0;
+    font-family: monospace;
+}
+
+.forever {
+    color: #ff8fb1;
+}
+
+
+/* GALLERY */
+
+.gallery {
+    text-align: center;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.photo {
+    height: 150px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff477e, #7b1239);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.photo span {
+    font-size: 50px;
+}
+
+.photo p {
+    margin-top: 10px;
+}
+
+
+/* HEART */
+
+.heart-page {
+    text-align: center;
+}
+
+.big-heart {
+    font-size: 100px;
+    animation: beat 1s infinite;
+}
+
+.status {
+    margin: 25px auto;
+    max-width: 350px;
+    text-align: left;
+}
+
+.status p {
+    padding: 12px;
+    margin: 8px;
+    background: #ffffff12;
+    border-radius: 10px;
+}
+
+
+/* SECRET */
+
+.secret {
+    text-align: center;
+}
+
+.lock {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+#secretMessage {
+    display: none;
+    margin-top: 30px;
+    animation: appear 1s;
+}
+
+#secretMessage h1 {
+    color: #ff91b1;
+    margin-bottom: 20px;
+}
+
+
+/* TASKBAR */
+
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background: rgba(10,0,7,.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.start-button {
+    background: #d6336c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.task-time {
+    font-family: monospace;
+}
+
+
+/* START MENU */
+
+#startMenu {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    left: 15px;
+    width: 280px;
+    background: rgba(30,3,18,.97);
+    border: 1px solid #ff8eac;
+    border-radius: 15px;
+    padding: 20px;
+    z-index: 100;
+}
+
+#startMenu h2 {
+    margin-bottom: 15px;
+}
+
+#startMenu p {
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#startMenu p:hover {
+    background: #ff477e44;
+}
+
+#startMenu hr {
+    border: none;
+    border-top: 1px solid #ffffff33;
+    margin: 10px 0;
+}
+
+
+/* FINAL SCREEN */
+
+#finalScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #21000e, #7d123b, #e83e78);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.final-content {
+    max-width: 650px;
+    padding: 40px;
+}
+
+.final-heart {
+    font-size: 100px;
+    animation: beat 1s infinite;
+}
+
+.final-content h1 {
+    font-size: 45px;
+    margin: 20px 0;
+}
+
+.final-content p {
+    font-size: 19px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.final-content h2 {
+    margin: 30px 0;
+    color: #ffd0df;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes beat {
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* FLOATING HEARTS */
+
+.floating-heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    animation: float 7s linear forwards;
+    z-index: 5;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .login-box {
+        width: 90%;
+    }
+
+    .window {
+        width: 94%;
+    }
+
+    .window-content {
+        padding: 20px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .final-content h1 {
+        font-size: 32px;
+    }
+
+}
