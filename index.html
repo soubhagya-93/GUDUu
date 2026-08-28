@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Her Birthday OS ❤️</title>
+
+    <title>My Love's Birthday ❤️</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- LOGIN SCREEN -->
+    <!-- =========================
+         LOGIN SCREEN
+    ========================== -->
+
     <div id="loginScreen">
+
         <div class="login-box">
-            <div class="user-icon">❤️</div>
+
+            <div class="user-icon">
+                ❤️
+            </div>
 
             <h1>Welcome, My Love</h1>
-            <p>This computer belongs to the most beautiful girl in my world.</p>
 
-            <input type="text" id="nameInput" placeholder="Enter your name">
+            <p>
+                This little world was created specially
+                for the most beautiful person in my life. ❤️
+            </p>
 
-            <button onclick="login()">♡ ENTER MY WORLD ♡</button>
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Enter your name"
+                autocomplete="off"
+            >
 
-            <small>Hint: It's the name I love the most ❤️</small>
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter secret password"
+            >
+
+            <button onclick="login()">
+                ♡ ENTER MY WORLD ♡
+            </button>
+
+            <small>
+                Hint: Only my special person knows the secret ❤️
+            </small>
+
         </div>
+
     </div>
 
 
-    <!-- DESKTOP -->
+    <!-- =========================
+         DESKTOP
+    ========================== -->
+
     <main id="desktop">
 
         <div class="desktop-title">
-            <span>❤️</span> My Love's Birthday OS
+            ❤️ My Love's Birthday OS
         </div>
 
-        <!-- DESKTOP ICONS -->
+
+        <!-- Desktop Icons -->
 
         <div class="icon" onclick="openWindow('loveWindow')">
             <div>💌</div>
             <span>Love Letter</span>
         </div>
 
+
         <div class="icon icon2" onclick="openWindow('galleryWindow')">
             <div>📸</div>
             <span>Our Memories</span>
         </div>
 
+
         <div class="icon icon3" onclick="openWindow('heartWindow')">
             <div>❤️</div>
             <span>My Heart</span>
         </div>
+
 
         <div class="icon icon4" onclick="openWindow('secretWindow')">
             <div>🔐</div>
@@ -56,220 +94,395 @@
         </div>
 
 
-        <!-- LOVE LETTER WINDOW -->
+        <!-- =========================
+             LOVE LETTER WINDOW
+        ========================== -->
 
         <div class="window" id="loveWindow">
 
             <div class="window-header">
-                <span>💌 Love Letter.exe</span>
+
+                <span>
+                    💌 Love Letter.exe
+                </span>
 
                 <button onclick="closeWindow('loveWindow')">
                     ✕
                 </button>
+
             </div>
+
 
             <div class="window-content love-letter">
 
-                <h1>Happy Birthday, My Love ❤️</h1>
+                <h1>
+                    Happy Birthday, My Love ❤️
+                </h1>
+
 
                 <p>
                     Today isn't just another day.
-                    Today is the day the world received someone
-                    who would eventually become my favourite person.
+                    Today is the day the world received
+                    someone who would eventually become
+                    my favourite person.
                 </p>
 
+
                 <p>
-                    You walked into my life and somehow made
-                    everything a little brighter, a little warmer,
-                    and a lot more beautiful.
+                    You walked into my life and somehow
+                    made everything brighter, warmer,
+                    and much more beautiful.
                 </p>
+
+
+                <p>
+                    Your smile became my favourite view.
+                    Your voice became my favourite sound.
+                    And your presence became my favourite
+                    part of every day.
+                </p>
+
 
                 <p>
                     If my life were a program,
-                    you would be the most beautiful line of code
-                    I could ever write.
+                    you would be the most beautiful
+                    line of code I could ever write.
                 </p>
+
 
                 <div class="code-love">
-                    while (myHeart.isBeating()) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;myHeart.love(you);<br>
+
+                    while (myHeart.isBeating()) {
+
+                    <br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    myHeart.love(you);
+
+                    <br>
+
                     }
+
                 </div>
 
+
                 <p class="forever">
-                    Error 404: A future without you not found. ❤️
+
+                    Error 404:
+                    A future without you not found. ❤️
+
                 </p>
 
-                <h2>I Love You Forever ♾️❤️</h2>
+
+                <h2>
+                    I Love You Forever ♾️❤️
+                </h2>
 
             </div>
+
         </div>
 
 
-        <!-- GALLERY WINDOW -->
+        <!-- =========================
+             MEMORIES WINDOW
+        ========================== -->
 
         <div class="window" id="galleryWindow">
 
             <div class="window-header">
-                <span>📸 Our Memories</span>
+
+                <span>
+                    📸 Our Memories
+                </span>
 
                 <button onclick="closeWindow('galleryWindow')">
                     ✕
                 </button>
+
             </div>
+
 
             <div class="window-content gallery">
 
-                <h2>Our Little Universe ❤️</h2>
+                <h2>
+                    Our Little Universe ❤️
+                </h2>
+
 
                 <div class="photos">
 
                     <div class="photo">
-                        <span>❤️</span>
-                        <p>Our First Memory</p>
+
+                        <span>
+                            ❤️
+                        </span>
+
+                        <p>
+                            Our First Memory
+                        </p>
+
                     </div>
 
-                    <div class="photo">
-                        <span>💕</span>
-                        <p>Beautiful Moments</p>
-                    </div>
 
                     <div class="photo">
-                        <span>🥰</span>
-                        <p>Your Smile</p>
+
+                        <span>
+                            💕
+                        </span>
+
+                        <p>
+                            Beautiful Moments
+                        </p>
+
                     </div>
 
+
                     <div class="photo">
-                        <span>🌹</span>
-                        <p>My Favourite Person</p>
+
+                        <span>
+                            🥰
+                        </span>
+
+                        <p>
+                            Your Beautiful Smile
+                        </p>
+
+                    </div>
+
+
+                    <div class="photo">
+
+                        <span>
+                            🌹
+                        </span>
+
+                        <p>
+                            My Favourite Person
+                        </p>
+
                     </div>
 
                 </div>
 
+
                 <p class="gallery-text">
-                    One day, these placeholders will become
-                    our real memories. ❤️
+
+                    Every moment with you
+                    is a memory I want to keep forever. ❤️
+
                 </p>
 
             </div>
+
         </div>
 
 
-        <!-- HEART WINDOW -->
+        <!-- =========================
+             MY HEART WINDOW
+        ========================== -->
 
         <div class="window" id="heartWindow">
 
             <div class="window-header">
-                <span>❤️ My Heart.exe</span>
+
+                <span>
+                    ❤️ My Heart.exe
+                </span>
 
                 <button onclick="closeWindow('heartWindow')">
                     ✕
                 </button>
+
             </div>
+
 
             <div class="window-content heart-page">
 
-                <div class="big-heart">❤️</div>
-
-                <h1>System Status</h1>
-
-                <div class="status">
-                    <p>❤️ Love: <b>100%</b></p>
-                    <p>🥰 Happiness: <b>∞</b></p>
-                    <p>💭 Thinking About You: <b>24/7</b></p>
-                    <p>♾️ Forever: <b>ACTIVE</b></p>
+                <div class="big-heart">
+                    ❤️
                 </div>
 
+
+                <h1>
+                    System Status
+                </h1>
+
+
+                <div class="status">
+
+                    <p>
+                        ❤️ Love:
+                        <b>100%</b>
+                    </p>
+
+                    <p>
+                        🥰 Happiness:
+                        <b>∞</b>
+                    </p>
+
+                    <p>
+                        💭 Thinking About You:
+                        <b>24/7</b>
+                    </p>
+
+                    <p>
+                        💕 Missing You:
+                        <b>Always</b>
+                    </p>
+
+                    <p>
+                        ♾️ Forever:
+                        <b>ACTIVE</b>
+                    </p>
+
+                </div>
+
+
                 <h2>
-                    You have permanent access to my heart. ❤️
+                    You have permanent access
+                    to my heart. ❤️
                 </h2>
 
             </div>
+
         </div>
 
 
-        <!-- SECRET WINDOW -->
+        <!-- =========================
+             SECRET WINDOW
+        ========================== -->
 
         <div class="window" id="secretWindow">
 
             <div class="window-header">
-                <span>🔐 Secret File</span>
+
+                <span>
+                    🔐 Secret File
+                </span>
 
                 <button onclick="closeWindow('secretWindow')">
                     ✕
                 </button>
+
             </div>
+
 
             <div class="window-content secret">
 
-                <div class="lock">🔐</div>
+                <div class="lock">
+                    🔐
+                </div>
 
-                <h2>WARNING!</h2>
+
+                <h2>
+                    CLASSIFIED FILE
+                </h2>
+
 
                 <p>
-                    You have discovered a highly classified file.
+                    You have discovered
+                    a highly classified file.
                 </p>
+
+
+                <br>
+
 
                 <button onclick="revealSecret()">
                     🔓 Unlock Secret
                 </button>
 
+
                 <div id="secretMessage">
-                    <h1>YOU ARE MY FOREVER. ❤️</h1>
+
+                    <h1>
+                        YOU ARE MY FOREVER ❤️
+                    </h1>
+
 
                     <p>
                         Out of all the people in this world,
                         somehow my heart found you.
                     </p>
 
+
                     <p>
                         And honestly...
-                        I hope it never stops choosing you. ❤️
+                        I hope it never stops choosing you.
+                        ❤️
                     </p>
+
+
+                    <p>
+                        No matter where life takes us,
+                        I want to keep making memories
+                        with you.
+                    </p>
+
                 </div>
 
             </div>
+
         </div>
 
 
-        <!-- START BAR -->
+        <!-- =========================
+             TASKBAR
+        ========================== -->
 
         <div class="taskbar">
 
-            <button class="start-button" onclick="showStart()">
+            <button
+                class="start-button"
+                onclick="showStart()"
+            >
                 ❤️ START
             </button>
 
-            <div class="task-time" id="clock">
+
+            <div
+                class="task-time"
+                id="clock"
+            >
                 00:00
             </div>
 
         </div>
 
 
-        <!-- START MENU -->
+        <!-- =========================
+             START MENU
+        ========================== -->
 
         <div id="startMenu">
 
-            <h2>❤️ My Love OS</h2>
+            <h2>
+                ❤️ My Love OS
+            </h2>
+
 
             <p onclick="openWindow('loveWindow')">
                 💌 Love Letter
             </p>
 
+
             <p onclick="openWindow('galleryWindow')">
-                📸 Memories
+                📸 Our Memories
             </p>
+
 
             <p onclick="openWindow('heartWindow')">
                 ❤️ My Heart
             </p>
 
+
             <p onclick="openWindow('secretWindow')">
                 🔐 Secret
             </p>
 
+
             <hr>
+
 
             <p onclick="finalSurprise()">
                 🎁 FINAL SURPRISE
@@ -280,7 +493,9 @@
     </main>
 
 
-    <!-- FINAL SURPRISE -->
+    <!-- =========================
+         FINAL SURPRISE
+    ========================== -->
 
     <div id="finalScreen">
 
@@ -290,27 +505,53 @@
                 ❤️
             </div>
 
-            <h1>Happy Birthday, My Love 🎂</h1>
+
+            <h1>
+                Happy Birthday, My Love 🎂
+            </h1>
+
 
             <p>
                 If I could give you one thing in life,
-                I would give you the ability to see yourself
-                through my eyes.
+                I would give you the ability to see
+                yourself through my eyes.
             </p>
+
 
             <p>
                 Then you would finally understand
-                how incredibly special you are to me. ❤️
+                how incredibly special you are to me.
+                ❤️
             </p>
 
+
             <h2>
-                You are my today.<br>
-                You are my tomorrow.<br>
+
+                You are my today. ❤️
+
+                <br>
+
+                You are my tomorrow. 💕
+
+                <br>
+
                 You are my forever. ♾️
+
             </h2>
 
+
+            <p>
+
+                Thank you for being
+                the most beautiful part of my life.
+
+            </p>
+
+
             <button onclick="closeFinal()">
+
                 ❤️ Close With Love
+
             </button>
 
         </div>
@@ -318,9 +559,15 @@
     </div>
 
 
+    <!-- Floating hearts will appear here -->
+
     <div id="hearts"></div>
+
+
+    <!-- JavaScript -->
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
