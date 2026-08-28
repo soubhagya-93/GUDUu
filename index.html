@@ -1,573 +1,415 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Love's Birthday ❤️</title>
 
-    <title>My Love's Birthday ❤️</title>
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
-</head>
+</head><body><!-- LOGIN SCREEN --><div id="loginScreen"><div class="login-box">
 
-<body>
+    <div class="user-icon">❤️</div>
 
-    <!-- =========================
-         LOGIN SCREEN
-    ========================== -->
+    <h1>Welcome, My Love</h1>
 
-    <div id="loginScreen">
+    <p>
+        This little world was created specially
+        for the most beautiful person in my life. ❤️
+    </p>
 
-        <div class="login-box">
+    <input
+        type="text"
+        id="nameInput"
+        placeholder="Enter your name"
+        autocomplete="off"
+    >
 
-            <div class="user-icon">
-                ❤️
-            </div>
+    <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter secret password"
+    >
 
-            <h1>Welcome, My Love</h1>
+    <button onclick="login()">
+        ♡ ENTER MY WORLD ♡
+    </button>
 
-            <p>
-                This little world was created specially
-                for the most beautiful person in my life. ❤️
-            </p>
+    <small>
+        Hint: Only my special person knows the secret ❤️
+    </small>
 
-            <input
-                type="text"
-                id="nameInput"
-                placeholder="Enter your name"
-                autocomplete="off"
-            >
+</div>
 
-            <input
-                type="password"
-                id="passwordInput"
-                placeholder="Enter secret password"
-            >
+</div><!-- DESKTOP --><main id="desktop"><div class="desktop-title">
+    ❤️ My Love's Birthday OS
+</div>
 
-            <button onclick="login()">
-                ♡ ENTER MY WORLD ♡
-            </button>
+<!-- DESKTOP ICONS -->
 
-            <small>
-                Hint: Only my special person knows the secret ❤️
-            </small>
+<div class="icon" onclick="openWindow('loveWindow')">
+    <div>💌</div>
+    <span>Love Letter</span>
+</div>
 
+<div class="icon icon2" onclick="openWindow('galleryWindow')">
+    <div>📸</div>
+    <span>Our Memories</span>
+</div>
+
+<div class="icon icon3" onclick="openWindow('heartWindow')">
+    <div>❤️</div>
+    <span>My Heart</span>
+</div>
+
+<div class="icon icon4" onclick="openWindow('secretWindow')">
+    <div>🔐</div>
+    <span>Secret</span>
+</div>
+
+
+<!-- LOVE LETTER -->
+
+<div class="window" id="loveWindow">
+
+    <div class="window-header">
+        <span>💌 Love Letter.exe</span>
+
+        <button onclick="closeWindow('loveWindow')">
+            ✕
+        </button>
+    </div>
+
+    <div class="window-content love-letter">
+
+        <h1>Happy Birthday, My Love ❤️</h1>
+
+        <p>
+            Today isn't just another day.
+            Today is the day the world received
+            someone who would eventually become
+            my favourite person.
+        </p>
+
+        <p>
+            You walked into my life and somehow
+            made everything brighter, warmer,
+            and much more beautiful.
+        </p>
+
+        <p>
+            Your smile became my favourite view.
+            Your voice became my favourite sound.
+            And your presence became my favourite
+            part of every day.
+        </p>
+
+        <p>
+            If my life were a program,
+            you would be the most beautiful
+            line of code I could ever write.
+        </p>
+
+        <div class="code-love">
+            while (myHeart.isBeating()) {
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;myHeart.love(you);
+            <br>
+            }
         </div>
+
+        <p class="forever">
+            Error 404:
+            A future without you not found. ❤️
+        </p>
+
+        <h2>
+            I Love You Forever ♾️❤️
+        </h2>
+
+    </div>
+</div>
+
+
+<!-- MEMORIES -->
+
+<div class="window" id="galleryWindow">
+
+    <div class="window-header">
+
+        <span>📸 Our Memories</span>
+
+        <button onclick="closeWindow('galleryWindow')">
+            ✕
+        </button>
 
     </div>
 
+    <div class="window-content gallery">
 
-    <!-- =========================
-         DESKTOP
-    ========================== -->
+        <h2>
+            Our Little Universe ❤️
+        </h2>
 
-    <main id="desktop">
+        <div class="photos">
 
-        <div class="desktop-title">
-            ❤️ My Love's Birthday OS
-        </div>
-
-
-        <!-- Desktop Icons -->
-
-        <div class="icon" onclick="openWindow('loveWindow')">
-            <div>💌</div>
-            <span>Love Letter</span>
-        </div>
-
-
-        <div class="icon icon2" onclick="openWindow('galleryWindow')">
-            <div>📸</div>
-            <span>Our Memories</span>
-        </div>
-
-
-        <div class="icon icon3" onclick="openWindow('heartWindow')">
-            <div>❤️</div>
-            <span>My Heart</span>
-        </div>
-
-
-        <div class="icon icon4" onclick="openWindow('secretWindow')">
-            <div>🔐</div>
-            <span>Secret</span>
-        </div>
-
-
-        <!-- =========================
-             LOVE LETTER WINDOW
-        ========================== -->
-
-        <div class="window" id="loveWindow">
-
-            <div class="window-header">
-
-                <span>
-                    💌 Love Letter.exe
-                </span>
-
-                <button onclick="closeWindow('loveWindow')">
-                    ✕
-                </button>
-
+            <div class="photo" onclick="openPhoto('photos/photo1.jpg')">
+                <img src="photos/photo1.jpg" alt="Our First Memory">
+                <p>Our First Memory ❤️</p>
             </div>
 
+            <div class="photo" onclick="openPhoto('photos/photo2.jpg')">
+                <img src="photos/photo2.jpg" alt="Beautiful Moments">
+                <p>Beautiful Moments 💕</p>
+            </div>
 
-            <div class="window-content love-letter">
+            <div class="photo" onclick="openPhoto('photos/photo3.jpg')">
+                <img src="photos/photo3.jpg" alt="Your Beautiful Smile">
+                <p>Your Beautiful Smile 🥰</p>
+            </div>
 
-                <h1>
-                    Happy Birthday, My Love ❤️
-                </h1>
-
-
-                <p>
-                    Today isn't just another day.
-                    Today is the day the world received
-                    someone who would eventually become
-                    my favourite person.
-                </p>
-
-
-                <p>
-                    You walked into my life and somehow
-                    made everything brighter, warmer,
-                    and much more beautiful.
-                </p>
-
-
-                <p>
-                    Your smile became my favourite view.
-                    Your voice became my favourite sound.
-                    And your presence became my favourite
-                    part of every day.
-                </p>
-
-
-                <p>
-                    If my life were a program,
-                    you would be the most beautiful
-                    line of code I could ever write.
-                </p>
-
-
-                <div class="code-love">
-
-                    while (myHeart.isBeating()) {
-
-                    <br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    myHeart.love(you);
-
-                    <br>
-
-                    }
-
-                </div>
-
-
-                <p class="forever">
-
-                    Error 404:
-                    A future without you not found. ❤️
-
-                </p>
-
-
-                <h2>
-                    I Love You Forever ♾️❤️
-                </h2>
-
+            <div class="photo" onclick="openPhoto('photos/photo4.jpg')">
+                <img src="photos/photo4.jpg" alt="My Favourite Person">
+                <p>My Favourite Person 🌹</p>
             </div>
 
         </div>
 
+        <p class="gallery-text">
+            Every moment with you
+            is a memory I want to keep forever. ❤️
+        </p>
 
-        <!-- =========================
-             MEMORIES WINDOW
-        ========================== -->
-
-        <div class="window" id="galleryWindow">
-
-            <div class="window-header">
-
-                <span>
-                    📸 Our Memories
-                </span>
-
-                <button onclick="closeWindow('galleryWindow')">
-                    ✕
-                </button>
-
-            </div>
+    </div>
+</div>
 
 
-            <div class="window-content gallery">
+<!-- PHOTO POPUP -->
 
-                <h2>
-                    Our Little Universe ❤️
-                </h2>
+<div id="photoViewer" onclick="closePhoto()">
 
+    <span class="close-photo">✕</span>
 
-                <div class="photos">
+    <img id="largePhoto" src="" alt="Memory">
 
-                    <div class="photo">
-
-                        <span>
-                            ❤️
-                        </span>
-
-                        <p>
-                            Our First Memory
-                        </p>
-
-                    </div>
+</div>
 
 
-                    <div class="photo">
+<!-- MY HEART -->
 
-                        <span>
-                            💕
-                        </span>
+<div class="window" id="heartWindow">
 
-                        <p>
-                            Beautiful Moments
-                        </p>
+    <div class="window-header">
 
-                    </div>
+        <span>❤️ My Heart.exe</span>
 
+        <button onclick="closeWindow('heartWindow')">
+            ✕
+        </button>
 
-                    <div class="photo">
+    </div>
 
-                        <span>
-                            🥰
-                        </span>
+    <div class="window-content heart-page">
 
-                        <p>
-                            Your Beautiful Smile
-                        </p>
-
-                    </div>
-
-
-                    <div class="photo">
-
-                        <span>
-                            🌹
-                        </span>
-
-                        <p>
-                            My Favourite Person
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <p class="gallery-text">
-
-                    Every moment with you
-                    is a memory I want to keep forever. ❤️
-
-                </p>
-
-            </div>
-
+        <div class="big-heart">
+            ❤️
         </div>
 
-
-        <!-- =========================
-             MY HEART WINDOW
-        ========================== -->
-
-        <div class="window" id="heartWindow">
-
-            <div class="window-header">
-
-                <span>
-                    ❤️ My Heart.exe
-                </span>
-
-                <button onclick="closeWindow('heartWindow')">
-                    ✕
-                </button>
-
-            </div>
-
-
-            <div class="window-content heart-page">
-
-                <div class="big-heart">
-                    ❤️
-                </div>
-
-
-                <h1>
-                    System Status
-                </h1>
-
-
-                <div class="status">
-
-                    <p>
-                        ❤️ Love:
-                        <b>100%</b>
-                    </p>
-
-                    <p>
-                        🥰 Happiness:
-                        <b>∞</b>
-                    </p>
-
-                    <p>
-                        💭 Thinking About You:
-                        <b>24/7</b>
-                    </p>
-
-                    <p>
-                        💕 Missing You:
-                        <b>Always</b>
-                    </p>
-
-                    <p>
-                        ♾️ Forever:
-                        <b>ACTIVE</b>
-                    </p>
-
-                </div>
-
-
-                <h2>
-                    You have permanent access
-                    to my heart. ❤️
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================
-             SECRET WINDOW
-        ========================== -->
-
-        <div class="window" id="secretWindow">
-
-            <div class="window-header">
-
-                <span>
-                    🔐 Secret File
-                </span>
-
-                <button onclick="closeWindow('secretWindow')">
-                    ✕
-                </button>
-
-            </div>
-
-
-            <div class="window-content secret">
-
-                <div class="lock">
-                    🔐
-                </div>
-
-
-                <h2>
-                    CLASSIFIED FILE
-                </h2>
-
-
-                <p>
-                    You have discovered
-                    a highly classified file.
-                </p>
-
-
-                <br>
-
-
-                <button onclick="revealSecret()">
-                    🔓 Unlock Secret
-                </button>
-
-
-                <div id="secretMessage">
-
-                    <h1>
-                        YOU ARE MY FOREVER ❤️
-                    </h1>
-
-
-                    <p>
-                        Out of all the people in this world,
-                        somehow my heart found you.
-                    </p>
-
-
-                    <p>
-                        And honestly...
-                        I hope it never stops choosing you.
-                        ❤️
-                    </p>
-
-
-                    <p>
-                        No matter where life takes us,
-                        I want to keep making memories
-                        with you.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================
-             TASKBAR
-        ========================== -->
-
-        <div class="taskbar">
-
-            <button
-                class="start-button"
-                onclick="showStart()"
-            >
-                ❤️ START
-            </button>
-
-
-            <div
-                class="task-time"
-                id="clock"
-            >
-                00:00
-            </div>
-
-        </div>
-
-
-        <!-- =========================
-             START MENU
-        ========================== -->
-
-        <div id="startMenu">
-
-            <h2>
-                ❤️ My Love OS
-            </h2>
-
-
-            <p onclick="openWindow('loveWindow')">
-                💌 Love Letter
+        <h1>
+            System Status
+        </h1>
+
+        <div class="status">
+
+            <p>
+                ❤️ Love:
+                <b>100%</b>
             </p>
 
-
-            <p onclick="openWindow('galleryWindow')">
-                📸 Our Memories
+            <p>
+                🥰 Happiness:
+                <b>∞</b>
             </p>
 
-
-            <p onclick="openWindow('heartWindow')">
-                ❤️ My Heart
+            <p>
+                💭 Thinking About You:
+                <b>24/7</b>
             </p>
 
-
-            <p onclick="openWindow('secretWindow')">
-                🔐 Secret
+            <p>
+                💕 Missing You:
+                <b>Always</b>
             </p>
 
-
-            <hr>
-
-
-            <p onclick="finalSurprise()">
-                🎁 FINAL SURPRISE
+            <p>
+                ♾️ Forever:
+                <b>ACTIVE</b>
             </p>
 
         </div>
 
-    </main>
+        <h2>
+            You have permanent access
+            to my heart. ❤️
+        </h2>
+
+    </div>
+</div>
 
 
-    <!-- =========================
-         FINAL SURPRISE
-    ========================== -->
+<!-- SECRET -->
 
-    <div id="finalScreen">
+<div class="window" id="secretWindow">
 
-        <div class="final-content">
+    <div class="window-header">
 
-            <div class="final-heart">
-                ❤️
-            </div>
+        <span>🔐 Secret File</span>
 
+        <button onclick="closeWindow('secretWindow')">
+            ✕
+        </button>
+
+    </div>
+
+    <div class="window-content secret">
+
+        <div class="lock">
+            🔐
+        </div>
+
+        <h2>
+            CLASSIFIED FILE
+        </h2>
+
+        <p>
+            You have discovered
+            a highly classified file.
+        </p>
+
+        <br>
+
+        <button onclick="revealSecret()">
+            🔓 Unlock Secret
+        </button>
+
+        <div id="secretMessage">
 
             <h1>
-                Happy Birthday, My Love 🎂
+                YOU ARE MY FOREVER ❤️
             </h1>
 
-
             <p>
-                If I could give you one thing in life,
-                I would give you the ability to see
-                yourself through my eyes.
+                Out of all the people in this world,
+                somehow my heart found you.
             </p>
 
-
             <p>
-                Then you would finally understand
-                how incredibly special you are to me.
-                ❤️
+                And honestly...
+                I hope it never stops choosing you. ❤️
             </p>
 
-
-            <h2>
-
-                You are my today. ❤️
-
-                <br>
-
-                You are my tomorrow. 💕
-
-                <br>
-
-                You are my forever. ♾️
-
-            </h2>
-
-
             <p>
-
-                Thank you for being
-                the most beautiful part of my life.
-
+                No matter where life takes us,
+                I want to keep making memories
+                with you.
             </p>
-
-
-            <button onclick="closeFinal()">
-
-                ❤️ Close With Love
-
-            </button>
 
         </div>
 
     </div>
+</div>
 
 
-    <!-- Floating hearts will appear here -->
+<!-- TASKBAR -->
 
-    <div id="hearts"></div>
+<div class="taskbar">
+
+    <button
+        class="start-button"
+        onclick="showStart()"
+    >
+        ❤️ START
+    </button>
+
+    <div
+        class="task-time"
+        id="clock"
+    >
+        00:00
+    </div>
+
+</div>
 
 
-    <!-- JavaScript -->
+<!-- START MENU -->
 
-    <script src="script.js"></script>
+<div id="startMenu">
 
-</body>
+    <h2>
+        ❤️ My Love OS
+    </h2>
 
+    <p onclick="openWindow('loveWindow')">
+        💌 Love Letter
+    </p>
+
+    <p onclick="openWindow('galleryWindow')">
+        📸 Our Memories
+    </p>
+
+    <p onclick="openWindow('heartWindow')">
+        ❤️ My Heart
+    </p>
+
+    <p onclick="openWindow('secretWindow')">
+        🔐 Secret
+    </p>
+
+    <hr>
+
+    <p onclick="finalSurprise()">
+        🎁 FINAL SURPRISE
+    </p>
+
+</div>
+
+</main><!-- FINAL SURPRISE --><div id="finalScreen"><div class="final-content">
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h1>
+        Happy Birthday, My Love 🎂
+    </h1>
+
+    <p>
+        If I could give you one thing in life,
+        I would give you the ability to see
+        yourself through my eyes.
+    </p>
+
+    <p>
+        Then you would finally understand
+        how incredibly special you are to me. ❤️
+    </p>
+
+    <h2>
+        You are my today. ❤️
+        <br><br>
+        You are my tomorrow. 💕
+        <br><br>
+        You are my forever. ♾️
+    </h2>
+
+    <p>
+        Thank you for being
+        the most beautiful part of my life.
+    </p>
+
+    <button onclick="closeFinal()">
+        ❤️ Close With Love
+    </button>
+
+</div>
+
+</div><!-- FLOATING HEARTS --><div id="hearts"></div><!-- JAVASCRIPT --><script src="script.js"></script></body>
 </html>
