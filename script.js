@@ -5,7 +5,7 @@
 // CHANGE THESE TWO VALUES
 
 const correctName = "Guluu";
-const correctPassword = "Iloveyou";
+const correctPassword = "ILoveyou";
 
 
 // ======================================
