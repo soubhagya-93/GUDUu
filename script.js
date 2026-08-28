@@ -4,8 +4,8 @@
 
 // CHANGE THESE TWO VALUES
 
-const correctName = "Gudu";
-const correctPassword = "143";
+const correctName = "Guluu";
+const correctPassword = "Iloveyou";
 
 
 // ======================================
