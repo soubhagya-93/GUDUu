@@ -15,13 +15,11 @@ const password =
     .getElementById("passwordInput")
     .value;
 
-/*
-   CHANGE THESE VALUES
-   TO YOUR SPECIAL PERSON'S
-   NAME AND PASSWORD.
-*/
+
+/* CHANGE THESE */
 
 const correctName = "Love";
+
 const correctPassword = "1234";
 
 
@@ -36,9 +34,37 @@ if (
     .getElementById("loginScreen")
     .style.display = "none";
 
+
     document
     .getElementById("desktop")
     .style.display = "block";
+
+
+    /* START MUSIC */
+
+    const music =
+        document.getElementById("birthdayMusic");
+
+    music.volume = 0.5;
+
+    music.play()
+    .then(function() {
+
+        document
+        .getElementById("musicButton")
+        .textContent =
+            "🎵 Music ON";
+
+    })
+    .catch(function() {
+
+        document
+        .getElementById("musicButton")
+        .textContent =
+            "▶️ Play Music";
+
+    });
+
 
     createHearts();
 
@@ -54,6 +80,37 @@ if (
 }
 
 /* =====================================================
+MUSIC ON / OFF
+===================================================== */
+
+function toggleMusic() {
+
+const music =
+    document.getElementById("birthdayMusic");
+
+const button =
+    document.getElementById("musicButton");
+
+
+if (music.paused) {
+
+    music.play();
+
+    button.textContent =
+        "🎵 Music ON";
+
+} else {
+
+    music.pause();
+
+    button.textContent =
+        "🔇 Music OFF";
+
+}
+
+}
+
+/* =====================================================
 OPEN WINDOW
 ===================================================== */
 
@@ -62,6 +119,7 @@ function openWindow(windowId) {
 document
 .getElementById(windowId)
 .style.display = "block";
+
 
 document
 .getElementById("startMenu")
@@ -82,7 +140,7 @@ document
 }
 
 /* =====================================================
-PHOTO VIEWER
+OPEN PHOTO
 ===================================================== */
 
 function openPhoto(photoPath, caption) {
@@ -99,9 +157,13 @@ const photoCaption =
 
 largePhoto.src = photoPath;
 
-photoCaption.textContent = caption;
+photoCaption.textContent =
+    caption;
 
-viewer.style.display = "flex";
+
+viewer.style.display =
+    "flex";
+
 
 createHeartsBurst();
 
@@ -120,8 +182,8 @@ if (
 ) {
 
     return;
-
 }
+
 
 document
 .getElementById("photoViewer")
@@ -138,6 +200,7 @@ function revealSecret() {
 document
 .getElementById("secretMessage")
 .style.display = "block";
+
 
 createHeartsBurst();
 
@@ -162,7 +225,6 @@ if (
 } else {
 
     menu.style.display = "block";
-
 }
 
 }
@@ -177,9 +239,11 @@ document
 .getElementById("startMenu")
 .style.display = "none";
 
+
 document
 .getElementById("finalScreen")
 .style.display = "flex";
+
 
 createHeartsBurst();
 
@@ -203,7 +267,9 @@ CLOCK
 
 function updateClock() {
 
-const now = new Date();
+const now =
+    new Date();
+
 
 let hours =
     now.getHours();
@@ -216,6 +282,7 @@ hours =
     hours < 10
     ? "0" + hours
     : hours;
+
 
 minutes =
     minutes < 10
@@ -246,11 +313,13 @@ function createHeart() {
 const heart =
     document.createElement("div");
 
+
 heart.className =
     "heart-float";
 
 
 const hearts = [
+
     "❤️",
     "💕",
     "💖",
@@ -258,6 +327,7 @@ const hearts = [
     "💓",
     "💞",
     "💘"
+
 ];
 
 
@@ -275,13 +345,13 @@ heart.style.left =
 
 
 heart.style.fontSize =
-    (15 + Math.random() * 25) +
-    "px";
+    (15 + Math.random() * 25)
+    + "px";
 
 
 heart.style.animationDuration =
-    (4 + Math.random() * 4) +
-    "s";
+    (4 + Math.random() * 4)
+    + "s";
 
 
 document
@@ -290,8 +360,10 @@ document
 
 
 setTimeout(
-    () => {
+    function() {
+
         heart.remove();
+
     },
     8000
 );
@@ -302,7 +374,8 @@ setTimeout(
 CONTINUOUS HEARTS
 ===================================================== */
 
-let heartsStarted = false;
+let heartsStarted =
+false;
 
 function createHearts() {
 
@@ -310,7 +383,9 @@ if (heartsStarted) {
     return;
 }
 
+
 heartsStarted = true;
+
 
 setInterval(
     createHeart,
