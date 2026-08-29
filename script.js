@@ -20,7 +20,7 @@ const password =
 
 const correctName = "Guluu";
 
-const correctPassword = "ILoveyou";
+const correctPassword = "Iloveyou";
 
 
 if (
