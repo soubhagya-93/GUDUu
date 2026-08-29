@@ -68,7 +68,9 @@ margin: 15px 0;
 
 .login-box p {
 line-height: 1.6;
+
 margin-bottom: 20px;
+
 }
 
 .login-box input {
@@ -113,13 +115,18 @@ cursor: pointer;
 
 .login-box small {
 display: block;
+
 margin-top: 15px;
+
 }
 
 #loginError {
-color: #fff;
+color: white;
+
 font-weight: bold;
+
 margin-top: 10px;
+
 }
 
 /* =========================
@@ -130,6 +137,7 @@ DESKTOP
 display: none;
 
 position: fixed;
+
 inset: 0;
 
 background:
@@ -154,6 +162,43 @@ padding: 18px;
 text-shadow:
     2px 2px 5px rgba(0,0,0,0.3);
 
+}
+
+/* =========================
+MUSIC BUTTON
+========================= */
+
+#musicButton {
+position: absolute;
+
+top: 15px;
+
+right: 15px;
+
+padding: 10px 15px;
+
+border: none;
+
+border-radius: 20px;
+
+background: rgba(255,255,255,0.95);
+
+color: #ff416c;
+
+font-weight: bold;
+
+cursor: pointer;
+
+z-index: 200;
+
+box-shadow:
+    0 5px 15px
+    rgba(0,0,0,0.2);
+
+}
+
+#musicButton:hover {
+transform: scale(1.05);
 }
 
 /* =========================
@@ -232,12 +277,14 @@ max-width: 750px;
 max-height: 75vh;
 
 left: 50%;
+
 top: 50%;
 
 transform:
     translate(-50%, -50%);
 
-background: rgba(255,255,255,0.97);
+background:
+    rgba(255,255,255,0.97);
 
 color: #333;
 
@@ -246,7 +293,8 @@ border-radius: 15px;
 overflow: hidden;
 
 box-shadow:
-    0 20px 60px rgba(0,0,0,0.4);
+    0 20px 60px
+    rgba(0,0,0,0.4);
 
 z-index: 100;
 
@@ -428,7 +476,7 @@ font-style: italic;
 }
 
 /* =========================
-LARGE PHOTO VIEWER
+LARGE PHOTO
 ========================= */
 
 #photoViewer {
@@ -603,6 +651,7 @@ position: absolute;
 bottom: 0;
 
 left: 0;
+
 right: 0;
 
 height: 55px;
@@ -818,11 +867,13 @@ ANIMATIONS
 
 from {
     transform: scale(0.7);
+
     opacity: 0;
 }
 
 to {
     transform: scale(1);
+
     opacity: 1;
 }
 
@@ -914,6 +965,13 @@ MOBILE
 .photo-close {
     top: 10px;
     right: 10px;
+}
+
+#musicButton {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 8px 10px;
 }
 
 }
