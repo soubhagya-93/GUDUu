@@ -18,9 +18,9 @@ const password =
 
 /* CHANGE THESE */
 
-const correctName = "Love";
+const correctName = "Guluu";
 
-const correctPassword = "1234";
+const correctPassword = "ILoveyou";
 
 
 if (
