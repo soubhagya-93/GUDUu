@@ -1,322 +1,341 @@
-// ======================================
-// LOGIN DETAILS
-// ======================================
-
-// CHANGE THESE TWO VALUES
-
-const correctName = "Guluu";
-const correctPassword = "ILoveyou";
-
-
-// ======================================
-// LOGIN FUNCTION
-// ======================================
+/* =====================================================
+LOGIN
+===================================================== */
 
 function login() {
 
-    const name =
-        document
-            .getElementById("nameInput")
-            .value
-            .trim();
+const name =
+    document
+    .getElementById("nameInput")
+    .value
+    .trim();
 
-    const password =
-        document
-            .getElementById("passwordInput")
-            .value;
+const password =
+    document
+    .getElementById("passwordInput")
+    .value;
 
+/*
+   CHANGE THESE VALUES
+   TO YOUR SPECIAL PERSON'S
+   NAME AND PASSWORD.
+*/
 
-    // Check name
-
-    if (
-        name.toLowerCase() !==
-        correctName.toLowerCase()
-    ) {
-
-        alert(
-            "❌ Sorry ❤️ This world is only for my special person."
-        );
-
-        return;
-    }
+const correctName = "Love";
+const correctPassword = "1234";
 
 
-    // Check password
-
-    if (
-        password !== correctPassword
-    ) {
-
-        alert(
-            "🔐 Wrong password... Try again, my love ❤️"
-        );
-
-        return;
-    }
-
-
-    // Successful login
+if (
+    name.toLowerCase() ===
+    correctName.toLowerCase()
+    &&
+    password === correctPassword
+) {
 
     document
-        .getElementById("loginScreen")
-        .style.display = "none";
-
+    .getElementById("loginScreen")
+    .style.display = "none";
 
     document
-        .getElementById("desktop")
-        .style.display = "block";
+    .getElementById("desktop")
+    .style.display = "block";
 
+    createHearts();
 
-    // Start floating hearts
+} else {
 
-    startHearts();
+    document
+    .getElementById("loginError")
+    .textContent =
+        "Oops! ❤️ Wrong name or password.";
+
 }
 
-
-
-// ======================================
-// OPEN WINDOW
-// ======================================
-
-function openWindow(id) {
-
-    document
-        .getElementById(id)
-        .style.display = "block";
-
-
-    document
-        .getElementById("startMenu")
-        .style.display = "none";
 }
 
+/* =====================================================
+OPEN WINDOW
+===================================================== */
 
+function openWindow(windowId) {
 
-// ======================================
-// CLOSE WINDOW
-// ======================================
+document
+.getElementById(windowId)
+.style.display = "block";
 
-function closeWindow(id) {
+document
+.getElementById("startMenu")
+.style.display = "none";
 
-    document
-        .getElementById(id)
-        .style.display = "none";
 }
 
+/* =====================================================
+CLOSE WINDOW
+===================================================== */
 
+function closeWindow(windowId) {
 
-// ======================================
-// START MENU
-// ======================================
+document
+.getElementById(windowId)
+.style.display = "none";
 
-function showStart() {
-
-    const menu =
-        document.getElementById("startMenu");
-
-
-    if (
-        menu.style.display === "block"
-    ) {
-
-        menu.style.display = "none";
-
-    } else {
-
-        menu.style.display = "block";
-
-    }
 }
 
+/* =====================================================
+PHOTO VIEWER
+===================================================== */
+
+function openPhoto(photoPath, caption) {
+
+const viewer =
+    document.getElementById("photoViewer");
+
+const largePhoto =
+    document.getElementById("largePhoto");
+
+const photoCaption =
+    document.getElementById("photoCaption");
 
 
-// ======================================
-// SECRET FILE
-// ======================================
+largePhoto.src = photoPath;
+
+photoCaption.textContent = caption;
+
+viewer.style.display = "flex";
+
+createHeartsBurst();
+
+}
+
+/* =====================================================
+CLOSE PHOTO
+===================================================== */
+
+function closePhoto(event) {
+
+if (
+    event &&
+    event.target !==
+    document.getElementById("photoViewer")
+) {
+
+    return;
+
+}
+
+document
+.getElementById("photoViewer")
+.style.display = "none";
+
+}
+
+/* =====================================================
+SECRET
+===================================================== */
 
 function revealSecret() {
 
-    const message =
-        document.getElementById("secretMessage");
+document
+.getElementById("secretMessage")
+.style.display = "block";
 
+createHeartsBurst();
 
-    message.style.display = "block";
-
-
-    startHearts();
 }
 
+/* =====================================================
+START MENU
+===================================================== */
+
+function showStart() {
+
+const menu =
+    document.getElementById("startMenu");
 
 
-// ======================================
-// FINAL SURPRISE
-// ======================================
+if (
+    menu.style.display === "block"
+) {
+
+    menu.style.display = "none";
+
+} else {
+
+    menu.style.display = "block";
+
+}
+
+}
+
+/* =====================================================
+FINAL SURPRISE
+===================================================== */
 
 function finalSurprise() {
 
-    document
-        .getElementById("startMenu")
-        .style.display = "none";
+document
+.getElementById("startMenu")
+.style.display = "none";
 
+document
+.getElementById("finalScreen")
+.style.display = "flex";
 
-    document
-        .getElementById("finalScreen")
-        .style.display = "flex";
+createHeartsBurst();
 
-
-    startHearts();
 }
 
-
-
-// ======================================
-// CLOSE FINAL SCREEN
-// ======================================
+/* =====================================================
+CLOSE FINAL
+===================================================== */
 
 function closeFinal() {
 
-    document
-        .getElementById("finalScreen")
-        .style.display = "none";
+document
+.getElementById("finalScreen")
+.style.display = "none";
+
 }
 
-
-
-// ======================================
-// DIGITAL CLOCK
-// ======================================
+/* =====================================================
+CLOCK
+===================================================== */
 
 function updateClock() {
 
-    const now = new Date();
+const now = new Date();
+
+let hours =
+    now.getHours();
+
+let minutes =
+    now.getMinutes();
 
 
-    let hours =
-        now.getHours()
-            .toString()
-            .padStart(2, "0");
+hours =
+    hours < 10
+    ? "0" + hours
+    : hours;
+
+minutes =
+    minutes < 10
+    ? "0" + minutes
+    : minutes;
 
 
-    let minutes =
-        now.getMinutes()
-            .toString()
-            .padStart(2, "0");
+document
+.getElementById("clock")
+.textContent =
+    hours + ":" + minutes;
 
-
-    document
-        .getElementById("clock")
-        .innerText =
-        hours + ":" + minutes;
 }
 
-
 setInterval(
-    updateClock,
-    1000
+updateClock,
+1000
 );
-
 
 updateClock();
 
+/* =====================================================
+FLOATING HEART
+===================================================== */
+
+function createHeart() {
+
+const heart =
+    document.createElement("div");
+
+heart.className =
+    "heart-float";
 
 
-// ======================================
-// FLOATING HEARTS
-// ======================================
+const hearts = [
+    "❤️",
+    "💕",
+    "💖",
+    "💗",
+    "💓",
+    "💞",
+    "💘"
+];
+
+
+heart.textContent =
+    hearts[
+        Math.floor(
+            Math.random() *
+            hearts.length
+        )
+    ];
+
+
+heart.style.left =
+    Math.random() * 100 + "vw";
+
+
+heart.style.fontSize =
+    (15 + Math.random() * 25) +
+    "px";
+
+
+heart.style.animationDuration =
+    (4 + Math.random() * 4) +
+    "s";
+
+
+document
+.getElementById("hearts")
+.appendChild(heart);
+
+
+setTimeout(
+    () => {
+        heart.remove();
+    },
+    8000
+);
+
+}
+
+/* =====================================================
+CONTINUOUS HEARTS
+===================================================== */
 
 let heartsStarted = false;
 
+function createHearts() {
 
-function startHearts() {
-
-    // Prevent multiple timers
-
-    if (heartsStarted) {
-        return;
-    }
-
-
-    heartsStarted = true;
-
-
-    setInterval(() => {
-
-        const heart =
-            document.createElement("div");
-
-
-        heart.className =
-            "floating-heart";
-
-
-        const heartTypes = [
-
-            "❤️",
-            "💕",
-            "💖",
-            "💗",
-            "💓",
-            "💞",
-            "🌹"
-
-        ];
-
-
-        heart.innerText =
-            heartTypes[
-                Math.floor(
-                    Math.random() *
-                    heartTypes.length
-                )
-            ];
-
-
-        heart.style.left =
-            Math.random() * 100 + "vw";
-
-
-        heart.style.fontSize =
-            (20 + Math.random() * 30) +
-            "px";
-
-
-        heart.style.animationDuration =
-            (5 + Math.random() * 5) +
-            "s";
-
-
-        document.body.appendChild(
-            heart
-        );
-
-
-        setTimeout(() => {
-
-            heart.remove();
-
-        }, 10000);
-
-
-    }, 500);
+if (heartsStarted) {
+    return;
 }
 
+heartsStarted = true;
 
+setInterval(
+    createHeart,
+    800
+);
 
-// ======================================
-// ENTER KEY LOGIN
-// ======================================
+}
 
-document
-    .getElementById("passwordInput")
-    .addEventListener(
-        "keypress",
-        function(event) {
+/* =====================================================
+HEART BURST
+===================================================== */
 
-            if (event.key === "Enter") {
+function createHeartsBurst() {
 
-                login();
+for (
+    let i = 0;
+    i < 15;
+    i++
+) {
 
-            }
-
-        }
+    setTimeout(
+        createHeart,
+        i * 100
     );
+
+}
+
+}
